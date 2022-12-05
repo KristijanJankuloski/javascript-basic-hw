@@ -1,1 +1,0 @@
-console.log("The area of circle is: " + (Math.PI * Math.pow(parseFloat(prompt("Enter radius: ")), 2)));
