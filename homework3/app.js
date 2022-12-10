@@ -94,7 +94,7 @@ const numberObj = 12;
 const stringObj = "yes";
 const boolObj = true;
 let undefinedObj;
-console.log(`Form outside: ${returnTypeAndPrint(nullObj)}, ${returnTypeAndPrint(numberObj)}, ${returnTypeAndPrint(stringObj)}, ${returnTypeAndPrint(boolObj)}, ${returnTypeAndPrint(undefined)}`);
+console.log(`Form outside: ${returnTypeAndPrint(nullObj)}, ${returnTypeAndPrint(numberObj)}, ${returnTypeAndPrint(stringObj)}, ${returnTypeAndPrint(boolObj)}, ${returnTypeAndPrint(undefinedObj)}`);
 
 // Dog year calculation test ---
 const yearInput = prompt("Enter age");
