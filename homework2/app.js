@@ -4,7 +4,6 @@ function calculateZodiacSign(year){
     if(Number.isNaN(year)){
         return "Invalid input";
     }
-
     const sign = (year - 4) % 12;
     if(sign === 0){
         return "Rat";
@@ -42,8 +41,14 @@ function calculateZodiacSign(year){
     if(sign === 11){
         return "Pig";
     }
-
+    
     return null;
 }
 
-console.log(`Your Chinease zodiac sign is ${calculateZodiacSign(yearOfBirth)}`);
+const zodiacSign = calculateZodiacSign(yearOfBirth);
+console.log(`Your Chinease zodiac sign is ${zodiacSign}`);
+
+// Cleaner solution just needs parsing for nonNumbers
+// const zodiacs = ["Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Goat", "Monkey", "Rooster", "Dog", "Pig"];
+// const signIndex = (yearOfBirth - 4) % 12;
+// console.log(zodiacs[signIndex]);
