@@ -59,64 +59,77 @@
 //       beforeProduct[i] = productSoFar
 //       productSoFar *= nums[i]
 //     }
-  
 //     // Create an array of the products of all the numbers after each index.
 //     const afterProduct = []
 //     productSoFar = 1
 //     for (let i = nums.length - 1; i >= 0; i--) {
 //       afterProduct[i] = productSoFar
 //       productSoFar *= nums[i]
-//     }
-  
+//     } 
 //     // Create the final array by multiplying the beforeProduct and afterProduct
 //     // arrays at each index.
 //     const answer = []
 //     for (let i = 0; i < nums.length; i++) {
 //       answer[i] = beforeProduct[i] * afterProduct[i]
-//     }
-  
+//     } 
 //     return answer
 //   }
 
 //   console.log(productOfArrayExceptSelf([1,2,3,4]))
 
 
-// VALID SUDOKU BOARD-----------------
-function validateSudoku(board){
-  let row = new Set();
-  let column = new Set();
-  let block = new Set();
-  for(let i=0; i < board.length; i++){
-    row.clear();
-    column.clear();
-    block.clear();
-    for(let inner = 0; inner < board[i].length; inner++){
-      if(row.has(board[i][inner]) && board[i][inner] !== "."){
-        return false;
-      }
-      row.add(board[i][inner]);
-      if(column.has(board[inner][i]) && board[inner][i] !== "."){
-        return false;
-      }
-      column.add(board[inner][i])
-      if(block.has(board[Math.floor(i/3)][Math.floor(inner/3)]) && board[Math.floor(i/3)][Math.floor(inner/3)] !== "."){
-        console.log(block);
-        return false;
-      }
-      block.add(board[Math.floor(i/3)][Math.floor(inner/3)]);
+// VALID SUDOKU BOARD-----------------not solved
+// function validateSudoku(board){
+//   let row = new Set();
+//   let column = new Set();
+//   let block = new Set();
+//   for(let i=0; i < board.length; i++){
+//     row.clear();
+//     column.clear();
+//     block.clear();
+//     for(let inner = 0; inner < board[i].length; inner++){
+//       let char = board[i][inner];
+//       if(char === "."){
+//         continue;
+//       }
+//       if(row.has(char)){
+//         return false;
+//       }
+//       if(column.has(char)){
+//         return false;
+//       }
+//       if(block.has(char)){
+//         return false;
+//       }
+//       row.add(board[i][inner]);
+//       column.add(board[inner][i]);
+//       block.add(board[(Math.floor(row / 3) * 3) + Math.floor(col / 3)][i]);
+//     }
+//   }
+//   return true;
+// }
+// const testBoard = [["5","3",".",".","7",".",".",".","."]
+// ,["6",".",".","1","9","5",".",".","."]
+// ,[".","9","8",".",".",".",".","6","."]
+// ,["8",".",".",".","6",".",".",".","3"]
+// ,["4",".",".","8",".","3",".",".","1"]
+// ,["7",".",".",".","2",".",".",".","6"]
+// ,[".","6",".",".",".",".","2","8","."]
+// ,[".",".",".","4","1","9",".",".","5"]
+// ,[".",".",".",".","8",".",".","7","9"]];
+
+// console.log(validateSudoku(testBoard));
+
+// longest consecutive sequence
+var longestConsecutive = function(nums) {
+  let longestSet = new Set();
+  for(let num of nums){
+    // console.log(num);
+    if(nums.find(element => element === num+1) || nums.find(element => element === num-1)){
+      longestSet.add(num);
     }
   }
-  return true;
-}
+  return longestSet.size;
+};
 
-const testBoard = [["5","3",".",".","7",".",".",".","."]
-,["6",".",".","1","9","5",".",".","."]
-,[".","9","8",".",".",".",".","6","."]
-,["8",".",".",".","6",".",".",".","3"]
-,["4",".",".","8",".","3",".",".","1"]
-,["7",".",".",".","2",".",".",".","6"]
-,[".","6",".",".",".",".","2","8","."]
-,[".",".",".","4","1","9",".",".","5"]
-,[".",".",".",".","8",".",".","7","9"]];
-
-console.log(validateSudoku(testBoard));
+console.log(longestConsecutive([100,4,200,1,2,3]));
