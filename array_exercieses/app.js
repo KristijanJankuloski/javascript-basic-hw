@@ -1,4 +1,4 @@
-// CHECK IF SRINGS ARE ANAGRAMS AND GROUP THEM IN AN ARRAY-----------------
+// CHECK IF STRINGS ARE ANAGRAMS AND GROUP THEM IN AN ARRAY-----------------
 // function areAnagrams(str1, str2){
 //     if(str1.length !== str2.length){
 //         return false;
@@ -123,6 +123,8 @@
 // longest consecutive sequence
 var longestConsecutive = function(nums) {
   let longestSet = new Set();
+  let workingSet = new Set();
+  workingSet.add(nums[0]);
   for(let num of nums){
     // console.log(num);
     if(nums.find(element => element === num+1) || nums.find(element => element === num-1)){

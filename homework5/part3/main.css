@@ -1,0 +1,32 @@
+:root{
+    --color-orange: #fab1a0;
+}
+
+html{
+    font-family: sans-serif;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.ingredients{
+    display: block;
+    margin: 5px 0;
+}
+
+#title::first-letter{
+    text-transform: capitalize;
+}
+
+#ingPrint > li::first-letter {
+    text-transform: capitalize;
+}
+
+.card {
+    background-color: var(--color-orange);
+    padding: 2px 15px;
+    margin: 5px;
+    border-radius: 8px;
+}
