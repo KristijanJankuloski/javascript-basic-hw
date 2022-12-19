@@ -1,10 +1,11 @@
 function sumOfMaxMin(array){
     let max = array[0];
     let min = array[0];
+
     for(let item of array){
+        // Ako elementot vo nizata ne e broj da go ignorira
         item = Number(item);
         if(Number.isNaN(item)){
-            console.log(`ignoring ${item}`)
             continue;
         }
         if(item > max){

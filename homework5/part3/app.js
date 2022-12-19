@@ -1,14 +1,4 @@
-let form = document.getElementById("form");
-let ingContainer = document.getElementById("ingContainer");
 let ingredients = [];
-ingContainer.innerHTML = "";
-
-function addIngredient(){
-    let newIng = document.createElement('input');
-    newIng.type = "text";
-    newIng.className = "ingredients";
-    ingContainer.appendChild(newIng);
-}
 
 function printRec(){
     ingredients = [];
@@ -26,3 +16,14 @@ function printRec(){
         ingDisplay.innerHTML += `<li>${item}</li>`;
     }
 }
+
+document.getElementById("name").addEventListener("input", printRec)
+document.getElementById("submit").addEventListener("click", printRec);
+document.getElementById("addIng").addEventListener("click", function(){
+    let ingContainer = document.getElementById("ingContainer");
+    let newIng = document.createElement('input');
+    newIng.type = "text";
+    newIng.className = "ingredients";
+    newIng.addEventListener("input", printRec);
+    ingContainer.appendChild(newIng); 
+});
