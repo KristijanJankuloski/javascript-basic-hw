@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Pokemon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <div class="main-container">
+            <form id="search" action="">
+                <input type="text" id="search-in">
+                <button type="submit">Search</button>
+                <button type="button" id="random-poke">Get Random</button>
+            </form>
+            <div class="card">
+                <div class="card-head">
+                    <h2 class="poke-name"></h2>
+                    <div class="img-container"></div>
+                    <div class="types-container">
+                        <h4>Types:</h4>
+                        <div id="types"></div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="base-stats">
+                        <h3>Base Stats:</h3>
+                        <p class="height">Height: <span id="poke-height"></span></p>
+                        <p class="weight">Weight: <span id="poke-weight"></span></p>
+                        <p class="exp">Base experience: <span id="poke-exp"></span></p>
+                    </div>
+                    <div class="abilities">
+                        <h3 class="ability-title">Abilities:</h3>
+                        <ul id="ability-list">
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <h3>Moves: </h3>
+                    <ul id="moves-container">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

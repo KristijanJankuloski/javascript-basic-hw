@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-primary: #e2e2e2;
+}
+
+html{
+    font-family: sans-serif;
+}
+
+ul{
+    list-style: none;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+.card{
+    background-color: var(--color-primary);
+    border-radius: 8px;
+    margin: 16px;
+    padding: 10px;
+}
+
+.card-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.types-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.poke-name::first-letter {
+    text-transform: capitalize;
+}
+
+.poke-type::first-letter {
+    text-transform: capitalize;
+}
+
+.card-body {
+    display: flex;
+    gap: 16px;
+    padding: 6px;
+}
+
+#ability-list > li::first-letter {
+    text-transform: capitalize;
+}
+
+.card-footer {
+    padding: 6px;
+}
+
+#moves-container {
+    max-height: 200px;
+    overflow-y: scroll;
+    padding: 4px;
+    border: 1px solid darkgray;
+    border-radius: 8px;
+}
+
+#moves-container > li::first-letter {
+    text-transform: capitalize;
+}
+
+#moves-container::-webkit-scrollbar{
+    opacity: 1;
+}
+#moves-container::-webkit-scrollbar-track{
+    opacity: 0;
+}
+#moves-container::-webkit-scrollbar-thumb{
+    opacity: 1;
+    background-color: gray;
+    border-radius: 8px;
+}
