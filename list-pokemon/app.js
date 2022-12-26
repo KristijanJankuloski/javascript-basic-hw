@@ -1,5 +1,18 @@
 const BASE_URL = "https://pokeapi.co/api/v2/pokemon/";
 
+async function listPokemon(){
+    const response = await fetch(BASE_URL);
+    const data = await response.json();
+    const cardContainer = document.querySelector(".card-container");
+    for(let item of data){
+        const card = document.createElement('div');
+        card.className = "card";
+        const cardHead = document.createElement('div');
+        cardHead.className = "card-head";
+        const title = document.createElement('h1');
+    }
+}
+
 function renderPokemon(data){
     const card = document.querySelector("#card");
     card.className ="card";
