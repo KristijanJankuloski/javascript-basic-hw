@@ -13,40 +13,13 @@
             <form id="search" action="">
                 <input type="text" id="search-in">
                 <button type="submit">Search</button>
-                <button type="button" id="random-poke">Get Random</button>
+                <button type="button" id="prevPage">Previous page</button>
+                <button type="button" id="nextPage">Next page</button>
             </form>
             <div class="card-container">
-                <div id="card" class="card">
-                    <div class="card-head">
-                        <h2 class="poke-name"></h2>
-                        <div class="img-container"></div>
-                        <div class="types-container">
-                            <h4>Types:</h4>
-                            <div id="types"></div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="base-stats">
-                            <h3>Base Stats:</h3>
-                            <p class="height">Height: <span id="poke-height"></span></p>
-                            <p class="weight">Weight: <span id="poke-weight"></span></p>
-                            <p class="exp">Base experience: <span id="poke-exp"></span></p>
-                        </div>
-                        <div class="abilities">
-                            <h3 class="ability-title">Abilities:</h3>
-                            <ul id="ability-list">
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <h3>Moves: </h3>
-                        <ul id="moves-container">
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     </main>
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
 </html>

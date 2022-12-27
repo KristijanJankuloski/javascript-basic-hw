@@ -1,67 +1,45 @@
+import { createCard } from "./cardConstructor.js";
+
 const BASE_URL = "https://pokeapi.co/api/v2/pokemon/";
+let currentPage = 1;
 
-async function listPokemon(){
-    const response = await fetch(BASE_URL);
-    const data = await response.json();
+async function listPokemon(page=1){
     const cardContainer = document.querySelector(".card-container");
-    for(let item of data){
-        const card = document.createElement('div');
-        card.className = "card";
-        const cardHead = document.createElement('div');
-        cardHead.className = "card-head";
-        const title = document.createElement('h1');
+    cardContainer.innerHTML = "";
+    for(let i=(page*20-19);i<=(page*20);i++){
+        const response = await fetch(`${BASE_URL}${i}`);
+        const item = await response.json();
+        cardContainer.appendChild(createCard(item));
     }
 }
 
-function renderPokemon(data){
-    const card = document.querySelector("#card");
-    card.className ="card";
-    document.querySelector(".poke-name").innerText = data.name;
-    document.querySelector(".img-container").innerHTML = `<img src="${data.sprites.front_default}" alt="${data.name}" />`;
-    document.querySelector("#poke-height").innerText = `${data.height/10}m`;
-    document.querySelector("#poke-weight").innerText = `${data.weight/10}Kg`;
-    document.querySelector("#poke-exp").innerText = `${data.base_experience}xp`
-    const abilityList = document.querySelector("#ability-list");
-    abilityList.innerHTML = "";
-    for(let item of data.abilities){
-        let newAbility = document.createElement("li");
-        let ability = item.ability.name.replaceAll("-", " ");
-        newAbility.innerText = `${ability}`;
-        abilityList.appendChild(newAbility);
-    }
-    const typesList = document.querySelector("#types");
-    typesList.innerHTML = "";
-    card.classList.add(`card-${data.types[0].type.name}`);
-    for(let item of data.types){
-        let newType = document.createElement("p");
-        newType.className = "poke-type";
-        let type = item.type.name.replaceAll("-", " ");
-        newType.innerText = type;
-        typesList.appendChild(newType);
-    }
-    const movesList = document.querySelector('#moves-container');
-    movesList.innerHTML = "";
-    for(let item of data.moves){
-        let newMove = document.createElement("li");
-        let move = item.move.name.replaceAll("-", " ");
-        newMove.innerText = `${move}`;
-        movesList.appendChild(newMove);
-    }
-}
-
-async function getPokemon(pokemon){
+async function findPokemon(pokemon){
     const response = await fetch(`${BASE_URL}${pokemon}`);
     const data = await response.json();
-    renderPokemon(data);
+    const cardContainer = document.querySelector(".card-container");
+    cardContainer.innerHTML = "";
+    cardContainer.appendChild(createCard(data));
 }
 
-document.querySelector('#search').addEventListener('submit', (event) => {
+// EVENT LISTENERS
+document.getElementById("prevPage").addEventListener('click', ()=>{
+    if(currentPage-1 <= 0){
+        alert("You are on the first page");
+        return;
+    }
+    listPokemon(--currentPage);
+});
+document.getElementById("nextPage").addEventListener('click', ()=>{
+    if(currentPage+1 > 45){
+        alert("You are on the first page");
+        return;
+    }
+    listPokemon(++currentPage);
+});
+document.getElementById("search").addEventListener('submit', (event)=>{
     event.preventDefault();
     const search = document.querySelector("#search-in").value.toLowerCase();
-    getPokemon(search);
+    findPokemon(search);
 });
 
-document.querySelector("#random-poke").addEventListener('click', () => {
-    const randomNumber = Math.floor(Math.random()*906);
-    getPokemon(randomNumber);
-});
+listPokemon(currentPage);
