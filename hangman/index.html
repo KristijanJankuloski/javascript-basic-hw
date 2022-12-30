@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman game</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main>
+        <div class="main-container">
+            <div class="header">
+                <h1 class="title">HANGMAN</h1>
+                <h3>vanilla JavaScript hangman game</h3>
+                <p class="description">Use alphabet below to guess a letter or get a hint</p>
+            </div>
+            <div class="game-body">
+                <div class="game-controls">
+                    <div class="alphabet-container">
+                        <button class="alph-btn" id="btn-a">A</button>
+                        <button class="alph-btn" id="btn-b">B</button>
+                        <button class="alph-btn" id="btn-c">C</button>
+                        <button class="alph-btn" id="btn-d">D</button>
+                        <button class="alph-btn" id="btn-e">E</button>
+                        <button class="alph-btn" id="btn-f">F</button>
+                        <button class="alph-btn" id="btn-g">G</button>
+                        <button class="alph-btn" id="btn-h">H</button>
+                        <button class="alph-btn" id="btn-i">I</button>
+                        <button class="alph-btn" id="btn-j">J</button>
+                        <button class="alph-btn" id="btn-k">K</button>
+                        <button class="alph-btn" id="btn-l">L</button>
+                        <button class="alph-btn" id="btn-m">M</button>
+                        <button class="alph-btn" id="btn-n">N</button>
+                        <button class="alph-btn" id="btn-o">O</button>
+                        <button class="alph-btn" id="btn-p">P</button>
+                        <button class="alph-btn" id="btn-q">Q</button>
+                        <button class="alph-btn" id="btn-r">R</button>
+                        <button class="alph-btn" id="btn-s">S</button>
+                        <button class="alph-btn" id="btn-t">T</button>
+                        <button class="alph-btn" id="btn-u">U</button>
+                        <button class="alph-btn" id="btn-v">V</button>
+                        <button class="alph-btn" id="btn-w">W</button>
+                        <button class="alph-btn" id="btn-x">X</button>
+                        <button class="alph-btn" id="btn-y">Y</button>
+                        <button class="alph-btn" id="btn-z">Z</button>
+                    </div>
+                </div>
+                <div class="play-area">
+                    <div class="word-area">
+                        <h3 class="choose-category">Select a category</h3>
+                        <div class="category-selector">
+                            <button class="btn catBtn" value="movies">Movies</button>
+                            <button class="btn catBtn" value="shows">TV Shows</button>
+                            <button class="btn catBtn" value="games">Games</button>
+                            <button class="btn catBtn" value="cities">Cities</button>
+                            <button class="btn catBtn" value="music">Music</button>
+                        </div>
+                        <!-- <h3 class="category">The chosen category is</h3>
+                        <h2 class="word-field">_____ ___</h2> -->
+                    </div>
+                    <div class="hangman-box">
+
+                    </div>
+                    <div class="actions">
+                        <button class="btn" id="hint">HINT</button>
+                        <button class="btn" id="restart">PLAY AGAIN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./app.js" type="module"></script>
+</body>
+</html>

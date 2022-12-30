@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-green: #6ab04c;
+    --color-light: #dff9fb;
+    --color-alt: #535c68;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+main {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.main-container{
+    padding: 20px;
+    color: white;
+    background-color: var(--color-green);
+    width: 800px;
+}
+
+@media(max-width: 600px) {
+    .main-container{
+        width: 600px;
+    }
+    .hangman-box {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.header {
+    text-align: center;
+}
+
+.description {
+    margin-top: 10px;
+}
+
+.alphabet-container {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
+    gap: 5px;
+}
+
+.alphabet-container > button{
+    height: 35px;
+    width: 35px;
+    background-color: white;
+    font-weight: 700;
+    color: var(--color-green);
+    border: none;
+    border-radius: 4px;
+    transition: all .3s ease;
+}
+
+.alphabet-container > button:hover {
+    background-color: var(--color-light);
+}
+
+.alphabet-container > button:disabled {
+    color: white;
+    background-color: var(--color-alt);
+}
+
+.play-area {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-selector {
+    margin-top: 10px;
+}
+
+.word-area{ 
+    text-align: center;
+}
+
+.word-field{
+    padding: 16px;
+    letter-spacing: 6px;
+}
+
+.hangman-box {
+    margin: 10px;
+    width: 400px;
+    height: 400px;
+    border: dashed white 2px;
+}
+
+.btn {
+    margin: 0 16px;
+    padding: 10px;
+    background-color: var(--color-green);
+    color: white;
+    border: solid 2px white;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background-color: white;
+    color: var(--color-green);
+}
