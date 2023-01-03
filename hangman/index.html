@@ -44,6 +44,16 @@
                         <button class="alph-btn" id="btn-x">X</button>
                         <button class="alph-btn" id="btn-y">Y</button>
                         <button class="alph-btn" id="btn-z">Z</button>
+                        <button class="alph-btn" id="btn-0">0</button>
+                        <button class="alph-btn" id="btn-1">1</button>
+                        <button class="alph-btn" id="btn-2">2</button>
+                        <button class="alph-btn" id="btn-3">3</button>
+                        <button class="alph-btn" id="btn-4">4</button>
+                        <button class="alph-btn" id="btn-5">5</button>
+                        <button class="alph-btn" id="btn-6">6</button>
+                        <button class="alph-btn" id="btn-7">7</button>
+                        <button class="alph-btn" id="btn-8">8</button>
+                        <button class="alph-btn" id="btn-9">9</button>
                     </div>
                 </div>
                 <div class="play-area">
@@ -59,8 +69,20 @@
                         <!-- <h3 class="category">The chosen category is</h3>
                         <h2 class="word-field">_____ ___</h2> -->
                     </div>
+                    <div class="hint-area">
+                        <h3 class="hint"></h3>
+                    </div>
                     <div class="hangman-box">
-
+                        <img class="hangman base" src="./assets/base.svg" alt="">
+                        <img class="hangman pole" src="./assets/pole.svg" alt="">
+                        <img class="hangman cross" src="./assets/base.svg" alt="">
+                        <img class="hangman rope" src="./assets/body.svg" alt="">
+                        <img class="hangman head" src="./assets/head.svg" alt="">
+                        <img class="hangman body" src="./assets/body.svg" alt="">
+                        <img class="hangman left-arm" src="./assets/left-limb.svg" alt="">
+                        <img class="hangman right-arm" src="./assets/right-limb.svg" alt="">
+                        <img class="hangman left-leg" src="./assets/left-limb.svg" alt="">
+                        <img class="hangman right-leg" src="./assets/right-limb.svg" alt="">
                     </div>
                     <div class="actions">
                         <button class="btn" id="hint">HINT</button>
@@ -70,6 +92,10 @@
             </div>
         </div>
     </main>
+    <!-- USE AS SERVERLESS -->
     <script src="./app.js" type="module"></script>
+    
+    <!-- USE WITH FETCH (need to start the node server in ./server directory) -->
+    <!-- <script src="./fetching.js" type="module"></script> -->
 </body>
 </html>

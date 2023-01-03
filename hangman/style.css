@@ -8,6 +8,7 @@
     --color-green: #6ab04c;
     --color-light: #dff9fb;
     --color-alt: #535c68;
+    --color-danger: #c0392b;
 }
 
 html {
@@ -93,10 +94,84 @@ main {
 }
 
 .hangman-box {
+    position: relative;
     margin: 10px;
     width: 400px;
     height: 400px;
     border: dashed white 2px;
+}
+.base {
+    position: absolute;
+    width: 120px;
+    bottom: 10px;
+    left: 30px;
+}
+
+.pole {
+    position: absolute;
+    width: 10px;
+    bottom: 10px;
+    left: 80px;
+}
+
+.cross {
+    position: absolute;
+    width: 130px;
+    top: 50px;
+    left: 80px;
+}
+
+.rope {
+    position: absolute;
+    width: 5px;
+    top: 50px;
+    left: 210px;
+}
+
+.head {
+    position: absolute;
+    width: 50px;
+    top: 115px;
+    left: 187px;
+}
+
+.body {
+    position: absolute;
+    width: 8px;
+    top: 160px;
+    left: 208px;
+}
+
+.left-arm {
+    position: absolute;
+    width: 40px;
+    top: 160px;
+    left: 174px;
+}
+
+.right-arm {
+    position: absolute;
+    width: 40px;
+    top: 160px;
+    left: 210px;
+}
+
+.left-leg {
+    position: absolute;
+    width: 40px;
+    bottom: 70px;
+    left: 174px;
+}
+
+.right-leg {
+    position: absolute;
+    width: 40px;
+    bottom: 70px;
+    left: 210px;
+}
+
+.hangman {
+    opacity: 0;
 }
 
 .btn {

@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-dark: #1e272e;
+    --color-light: #d2dae2;
+    --color-orange: #ffa801;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    padding: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    min-width: 60px;
+    text-align: center;
+    border: none;
+    transition: all .3s ease;
+}
+
+.btn:hover {
+    box-shadow: inset black 0 0 6px;
+}
+
+.btn:active {
+    box-shadow: inset black 3px 3px 8px;
+}
+
+.calculator {
+    background-color: var(--color-dark);
+    display: grid;
+    grid-template-areas: 
+    "head head head head"
+    "clear clear back div"
+    "seven eight nine mult"
+    "four five six sub"
+    "one two three add"
+    "dot zero zero eq";
+    gap: 5px;
+}
+
+.input-result {
+    grid-area: head;
+    color: white;
+    text-align: end;
+    min-height: 95px;
+}
+
+.input {
+    color: var(--color-light);
+}
+
+.clear {
+    grid-area: clear;
+    background-color: var(--color-light);
+}
+
+.backspace {
+    grid-area: back;
+    background-color: var(--color-light);
+}
+
+.division {
+    grid-area: div;
+    background-color: var(--color-orange);
+    color: white;
+}
+
+.seven {
+    grid-area: seven;
+    background-color: var(--color-light);
+}
+
+.eight {
+    grid-area: eight;
+    background-color: var(--color-light);
+}
+
+.nine {
+    grid-area: nine;
+    background-color: var(--color-light);
+}
+
+.multiplication {
+    grid-area: mult;
+    background-color: var(--color-orange);
+    color: white;
+}
+
+.four {
+    grid-area: four;
+    background-color: var(--color-light);
+}
+
+.five {
+    grid-area: five;
+    background-color: var(--color-light);
+}
+
+.six {
+    grid-area: six;
+    background-color: var(--color-light);
+}
+
+.subtract {
+    grid-area: sub;
+    background-color: var(--color-orange);
+    color: white;
+}
+
+.one {
+    grid-area: one;
+    background-color: var(--color-light);
+}
+
+.two {
+    grid-area: two;
+    background-color: var(--color-light);
+}
+
+.three {
+    grid-area: three;
+    background-color: var(--color-light);
+}
+
+.add {
+    grid-area: add;
+    background-color: var(--color-orange);
+    color: white;
+}
+
+.dot {
+    grid-area: dot;
+    background-color: var(--color-light);
+}
+
+.zero {
+    grid-area: zero;
+    background-color: var(--color-light);
+}
+
+.equals {
+    grid-area: eq;
+    background-color: var(--color-orange);
+    color: white;
+}
