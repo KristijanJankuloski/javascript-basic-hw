@@ -90,6 +90,9 @@ main {
 
 .word-field{
     padding: 16px;
+}
+
+.blank {
     letter-spacing: 6px;
 }
 
