@@ -1,6 +1,7 @@
 import BASE_URL from "./constatnts.js";
 const cardContainer = document.querySelector(".card-container");
 const detailContainer = document.querySelector(".detail-container");
+const loader = document.querySelector(".loading-bar");
 
 // FUNCTION DEFENITIONS
 async function getProducts(){
@@ -121,21 +122,25 @@ function findMaxRated(items){
 function listProducts() {
     detailContainer.innerHTML = "";
     cardContainer.innerHTML = "";
+    loader.style.display = 'flex';
     getProducts().then(data => {
         for(let item of data){
             cardContainer.appendChild(createCard(item));
         }
         document.querySelector(".totalPrice").innerText = `${calculateTotalPrice(data)}$`;
         console.log(findMaxRated(data));
+        loader.style.display = 'none';
     });
 }
 
 // EVENT LSITENERS
 document.querySelector("#searchForm").addEventListener('submit', (event) => {
     event.preventDefault();
+    loader.style.display = 'flex';
     const id = Number(document.querySelector("#searchId").value);
     getOneProduct(id).then(data => {
         createDetailPage(data);
+        loader.style.display = 'none';
     });
 });
 

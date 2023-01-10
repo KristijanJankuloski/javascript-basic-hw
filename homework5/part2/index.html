@@ -5,10 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background-color: lightskyblue;
+        }
+        button.btn {
+        /* Minimalistic style */
+        background-color: transparent;
+        border: 2px solid white;
+        color: white;
+        font-size: 16px;
+        padding: 10px 20px;
+        /* Rounded borders */
+        border-radius: 20px;
+        /* Transition and hover effect */
+        transition: all 0.3s ease;
+        cursor: pointer;
+        /* Click effect */
+    }
+    button.btn:hover {
+        background-color: white;
+        color: black;
+    }
+    button.btn:active {
+        transform: scale(0.95);
+    }
+
+        /* Animation for text inside button */
+        @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+        100% {
+            transform: scale(1);
+        }
+        }
+        button.btn span {
+        animation: pulse 1s infinite;
+        }
+    </style>
 </head>
 <body>
     <h1>Numbers Array</h1>
     <h3 id="printArea"></h3>
+    <button class="btn"><span>Submit</span></button>
     <script src="app.js"></script>
 </body>
 </html>
