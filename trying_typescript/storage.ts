@@ -1,3 +1,3 @@
-import * as storage from './index';
-
-const storageAccount = new storage.StorageAccount();
+export function exportedFunc(){
+    return "Hello form exported";
+}
